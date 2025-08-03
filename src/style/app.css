@@ -15,6 +15,16 @@
   --color-green-dark: #133040;
 }
 
+@layer base {
+  body {
+    @apply bg-navy font-mono text-slate;
+    background-image: url("https://res.cloudinary.com/dn7lqpl1x/image/upload/v1631080208/wrapped_k7g6ev.svg");
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 75%;
+  }
+}
+
 @layer components {
   /* Base Button */
   .btn {
@@ -81,7 +91,7 @@
 
 /* Saat scroll ke atas — muncul + solid */
 .header-show {
-  @apply bg-navy shadow hover:bg-transparent hover:shadow-none opacity-100 transition-all duration-500;
+  @apply bg-transparent opacity-100 transition-all duration-500;
   transform: translateY(0);
 }
 
