@@ -8,7 +8,7 @@
   }
 
   .nav-item {
-    @apply text-text-light hover:text-accent;
+    @apply text-text-light hover:text-accent duration-500;
   }
 
   .btn-login {

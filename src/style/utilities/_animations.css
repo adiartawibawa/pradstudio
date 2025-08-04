@@ -9,8 +9,12 @@
 }
 
 #spotlight {
-  @apply fixed top-0 left-0 w-[600px] h-[600px] z-0 pointer-events-none;
-  background: radial-gradient(300px circle at center, rgba(var(--color-accent), 0.12), transparent 70%);
+  @apply fixed top-1/2 left-1/2 w-[600px] h-[600px] z-10 pointer-events-none;
+  background: radial-gradient(
+    300px circle at center, 
+    rgba(255, 107, 107, 0.12), 
+    transparent 70%
+  );
   mix-blend-mode: screen;
   transform: translate(-50%, -50%);
 }
