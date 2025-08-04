@@ -1,0 +1,25 @@
+@layer components {
+  .hero-section {
+    @apply w-full h-screen flex flex-col justify-center items-start max-w-6xl px-6 mx-auto;
+  }
+
+  .hero-subtitle {
+    @apply text-accent mb-2;
+  }
+
+  .hero-title {
+    @apply text-4xl sm:text-5xl md:text-6xl font-bold text-text-light mb-2;
+  }
+
+  .hero-subtitle-large {
+    @apply text-3xl sm:text-4xl md:text-5xl font-bold text-text mb-6;
+  }
+
+  .hero-description {
+    @apply text-base leading-relaxed mb-10 max-w-2xl;
+  }
+
+  .text-accent {
+    @apply text-accent hover:underline;
+  }
+}

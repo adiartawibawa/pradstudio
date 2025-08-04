@@ -1,0 +1,21 @@
+@layer components {
+  .main-nav {
+    @apply hidden md:block;
+  }
+
+  .nav-list {
+    @apply flex items-center space-x-4 lg:space-x-8;
+  }
+
+  .nav-item {
+    @apply text-text-light hover:text-accent;
+  }
+
+  .btn-login {
+    @apply hidden md:block;
+  }
+
+  .mobile-menu-btn {
+    @apply md:hidden text-text-light hover:text-accent;
+  }
+}

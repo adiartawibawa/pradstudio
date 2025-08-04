@@ -1,0 +1,52 @@
+@layer components {
+  /* Base Button */
+  .btn {
+    @apply inline-flex items-center justify-center font-semibold rounded transition-all duration-300;
+    @apply px-6 py-2 border border-transparent;
+  }
+
+  /* Color Variants */
+  .btn-primary {
+    @apply bg-accent text-white hover:bg-accent-hover;
+  }
+
+  .btn-secondary {
+    @apply bg-text-dark text-white hover:bg-text;
+  }
+
+  .btn-outline {
+    @apply border border-accent text-accent;
+  }
+
+  .btn-dark {
+    @apply bg-bg-dark text-white border border-bg-card hover:bg-bg;
+  }
+
+  /* Size Variants */
+  .btn-sm {
+    @apply text-sm px-4 py-1.5;
+  }
+
+  .btn-lg {
+    @apply text-lg px-8 py-3;
+  }
+
+  /* Hover Neon Glow Effect */
+  .btn-glow {
+    @apply hover:translate-x-1 hover:translate-y-1 hover:shadow-[4px_4px_0_0_var(--color-accent)];
+  }
+
+  /* Loading State */
+  .btn-loading {
+    @apply relative text-transparent pointer-events-none;
+  }
+
+  .btn-loading::after {
+    content: '';
+    @apply absolute inset-0 flex items-center justify-center;
+    background-image: url('/spinner.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1.5rem;
+  }
+}

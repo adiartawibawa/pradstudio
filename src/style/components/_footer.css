@@ -1,0 +1,9 @@
+@layer components {
+  .footer {
+    @apply text-xs text-text;
+  }
+
+  .footer-text {
+    @apply mb-2 last:mb-0;
+  }
+}

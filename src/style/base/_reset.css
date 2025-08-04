@@ -1,0 +1,9 @@
+@layer base {
+  body {
+    @apply bg-bg font-mono text-text;
+    background-image: url("../../img/pattern.svg");
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 75%;
+  }
+}

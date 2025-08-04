@@ -1,0 +1,16 @@
+@layer utilities {
+  .fade-in {
+    @apply opacity-0 transition-opacity duration-700 ease-out;
+  }
+
+  .fade-in.show {
+    @apply opacity-100;
+  }
+}
+
+#spotlight {
+  @apply fixed top-0 left-0 w-[600px] h-[600px] z-0 pointer-events-none;
+  background: radial-gradient(300px circle at center, rgba(var(--color-accent), 0.12), transparent 70%);
+  mix-blend-mode: screen;
+  transform: translate(-50%, -50%);
+}

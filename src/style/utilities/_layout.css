@@ -1,0 +1,5 @@
+@layer utilities {
+  .main-content {
+    @apply flex flex-col justify-center items-center min-h-screen px-6 pt-20;
+  }
+}
