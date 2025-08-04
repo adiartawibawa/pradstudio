@@ -20,4 +20,21 @@
   .logo {
     @apply cursor-pointer text-lg font-bold text-text-light hover:text-accent duration-500;
   }
+
+  .logo-container {
+    @apply flex items-center;
+  }
+
+  .logo-image {
+  @apply h-14 md:h-28 w-auto transition-transform duration-300 ease-in-out;
+}
+.logo-image:hover {
+  @apply scale-105;
+}
+
+  /* For dark mode support */
+  .dark .logo-image {
+    filter: brightness(0) invert(1);
+  }
+
 }

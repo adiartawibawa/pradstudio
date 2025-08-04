@@ -28,15 +28,15 @@
   }
 
   .about-text {
-    @apply mt-6 space-y-4 text-sm leading-relaxed text-text;
+    @apply mt-6 space-y-4 text-base leading-relaxed text-text;
   }
 
   .tech-list {
-    @apply grid grid-cols-2 gap-y-1 text-xs font-mono mt-2;
+    @apply grid grid-cols-2 gap-y-1 text-sm font-mono mt-2;
   }
 
   .tech-item {
-    @apply before:content-['▸'] before:mr-2;
+    @apply before:content-['▸'] before:mr-2 before:text-accent;
   }
 
   .about-image-container {

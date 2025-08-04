@@ -1,31 +1,54 @@
 <!doctype html>
 <html lang="en" class="scroll-smooth">
+<!-- 
+  Main HTML document with smooth scrolling enabled
+  Language set to English for accessibility
+-->
 
 <head>
+  <!-- Meta tags for character encoding and responsive viewport -->
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="icon" type="image/svg+xml" href="/PRADStudio.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Page title displayed in browser tab -->
   <title>PRADStudio</title>
 
+  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
+  <!-- Spotlight effect element (positioned fixed) -->
   <div id="spotlight"></div>
+
+  <!-- Main app container -->
   <div id="app">
-    <!-- Header -->
+
+    <!-- ==================== HEADER SECTION ==================== -->
     <header class="header">
       <div class="header-container">
-        <p class="logo">PRADStudio</p>
+        <!-- Company logo -->
+        <!-- <p class="logo">PRADStudio</p> -->
+        <div class="logo-container">
+          <a href="/#intro" aria-label="PRADStudio Home">
+            <img src="./public/PRADStudio-logo.svg" alt="PRADStudio Logo" class="logo-image" width="180"
+              height="40" loading="eager">
+          </a>
+        </div>
+
+        <!-- Main navigation -->
         <nav class="main-nav">
           <ul class="nav-list">
             <li class="nav-item"><a href="#intro">Intro</a></li>
             <li class="nav-item"><a href="#about">About</a></li>
             <li class="nav-item"><a href="#showcase">Showcase</a></li>
             <li class="nav-item"><a href="#insight">Insight</a></li>
-            <li class="nav-item"><a href="#contact">Contact Us</a></li>
+            <li class="nav-item"><a href="#contact">Contact</a></li>
           </ul>
         </nav>
+
+        <!-- Login button and mobile menu toggle -->
         <a href="#" class="btn btn-outline btn-glow btn-login">Login</a>
         <button class="mobile-menu-btn">
           <i class="fa fa-bars fa-lg"></i>
@@ -33,15 +56,16 @@
       </div>
     </header>
 
-    <!-- Side Left -->
+    <!-- ==================== SIDEBARS ==================== -->
+    <!-- Left sidebar - Social media links -->
     <div class="social-links">
-      <a href="https://github.com" class="social-link"><i class="fa-2x fa fa-github"></i></a>
-      <a href="#" class="social-link"><i class="fa-2x fa fa-twitter"></i></a>
-      <a href="#" class="social-link"><i class="fa-2x fa fa-instagram"></i></a>
+      <a href="https://github.com/adiartawibawa" class="social-link"><i class="fa-2x fa fa-github"></i></a>
+      <a href="https://wa.me/6281916175060" class="social-link"><i class="fa-2x fa fa-whatsapp"></i></a>
+      <a href="https://www.instagram.com/pradstudios" class="social-link"><i class="fa-2x fa fa-instagram"></i></a>
       <div class="social-divider"></div>
     </div>
 
-    <!-- Right Sidebar -->
+    <!-- Right sidebar - Email contact -->
     <div class="email-sidebar">
       <a href="mailto:surat.buat.adi@gmail.com" class="email-link">
         surat.buat.adi@gmail.com
@@ -49,77 +73,89 @@
       <div class="email-divider"></div>
     </div>
 
+    <!-- ==================== MAIN CONTENT ==================== -->
     <main class="main-content fade-in show">
-      <!-- Section: Hero -->
+      <!-- HERO SECTION -->
       <section id="intro" class="hero-section">
-        <p class="hero-subtitle">Hi, welcome to</p>
+        <p class="hero-subtitle">Transform Your Digital Presence</p>
         <h1 class="hero-title">PRADStudio</h1>
-        <h2 class="hero-subtitle-large">We build things for the web.</h2>
+        <h2 class="hero-subtitle-large">Your Trusted IT Solutions Partner</h2>
         <p class="hero-description">
-          We specializing in building (and occasionally designing) exceptional digital experiences.
-          Currently focused on accessible, human-centered products at
-          <a href="#" class="text-accent">Upstatement</a>.
+          We specialize in crafting exceptional digital experiences through custom website development,
+          mobile applications, and innovative IT solutions. Our team delivers cutting-edge technology
+          tailored to elevate your business in the digital landscape.
         </p>
-        <a href="#about" class="btn btn-outline btn-glow">
-          Check out my course!
-        </a>
+        <div class="flex gap-4 mt-8">
+          <a href="#services" class="btn btn-primary btn-glow">
+            Explore Our Services
+          </a>
+          <a href="#contact" class="btn btn-outline btn-glow">
+            Get Free Consultation
+          </a>
+        </div>
       </section>
 
-      <!-- Section: About Me -->
+      <!-- ABOUT SECTION -->
       <section id="about" class="about-section">
         <div class="about-container">
-          <!-- Teks Kiri -->
+          <!-- Left column - Text content -->
           <div class="about-content">
             <h2 class="section-title">
               <span class="section-number">01.</span>
-              <span class="section-heading">About Me</span>
+              <span class="section-heading">About Our Agency</span>
               <span class="section-divider"></span>
             </h2>
             <div class="about-text">
-              <p>Hello! My name is Adi Arta Wibawa and I enjoy creating things that live on the internet. My interest in
-                web development started back in 2012 when I decided to try editing custom Tumblr themes — turns out
-                hacking together a custom reblog button taught me a lot about HTML & CSS!</p>
-              <p>Fast-forward to today, and I've had the privilege of working at
-                <span class="text-accent">an advertising agency</span>,
-                <span class="text-accent">a start-up</span>,
-                <span class="text-accent">a huge corporation</span>, and
-                <span class="text-accent">a student-led design studio</span>.
-                My main focus these days is building accessible, inclusive products and digital experiences at
-                <span class="text-accent">Upstatement</span>.
-              </p>
-              <p>I also recently <span class="text-accent">launched a course</span> that covers everything you need
-                to build a web app with the Spotify API using Node & React.</p>
-              <p>Here are a few technologies I've been working with recently:</p>
+              <!-- Agency description paragraphs -->
+              <p>Welcome to <span class="text-accent">PRADStudio</span>, your trusted partner for comprehensive digital
+                solutions. Founded in 2018, we've been transforming business ideas into exceptional digital experiences
+                that drive growth and innovation.</p>
+
+              <p>Our journey began with a small team of passionate developers, and today we've grown into a full-service
+                IT agency serving clients across various industries. We've had the privilege of collaborating with <span
+                  class="text-accent">startups</span>, <span class="text-accent">SMEs</span>, and <span
+                  class="text-accent">enterprise clients</span> to deliver tailored solutions that meet their unique
+                business needs.</p>
+
+              <p>At PRADStudio, we believe in the power of technology to transform businesses. Our mission is to bridge
+                the gap between your vision and technical execution, delivering products that are not only visually
+                stunning but also technically robust and user-friendly.</p>
+
+              <!-- Service offerings list -->
+              <p>Here are some of our core service offerings:</p>
               <ul class="tech-list">
-                <li class="tech-item">JavaScript (ES6+)</li>
-                <li class="tech-item">TypeScript</li>
-                <li class="tech-item">React</li>
-                <li class="tech-item">Eleventy</li>
-                <li class="tech-item">Node.js</li>
-                <li class="tech-item">WordPress</li>
+                <li class="tech-item">Custom Web Development</li>
+                <li class="tech-item">Mobile App Development</li>
+                <li class="tech-item">UI/UX Design</li>
+                <li class="tech-item">E-Commerce Solutions</li>
+                <li class="tech-item">Digital Transformation</li>
+                <li class="tech-item">IT Consulting</li>
               </ul>
+
+              <p class="mt-6">Our team combines technical expertise with creative thinking to deliver solutions that
+                make a real impact. Let's build something amazing together!</p>
             </div>
           </div>
 
-          <!-- Gambar Kanan -->
+          <!-- Right column - Team image -->
           <div class="about-image-container group">
             <div class="about-image-wrapper">
               <img
-                src="https://cdn.prod.website-files.com/5e51c674258ffe10d286d30a/5e53539b550b7634d6f2aade_peep-25.png"
-                alt="Profile" class="about-image" />
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                alt="PRADStudio Team" class="about-image" />
             </div>
             <div class="about-image-border"></div>
           </div>
         </div>
       </section>
 
-      <!-- Section: Show case -->
+      <!-- PROJECT SHOWCASE SECTION -->
       <section id="showcase" class="showcase-section">
         <div class="showcase-header">
           <div class="showcase-title-container">
             <h2 class="section-title">
-              <span class="section-number">03.</span>
-              <span class="section-heading">Some Things We've Built</span>
+              <span class="section-number">02.</span>
+              <span class="section-heading">Our Featured Projects</span>
               <span class="section-divider"></span>
             </h2>
           </div>
@@ -128,12 +164,12 @@
         <div class="project-container group">
           <!-- Project Image (Left) -->
           <div class="project-image-left">
-            <a href="https://example.com/projects/halcyon" target="_blank" rel="noopener noreferrer"
-              aria-label="View Halcyon Theme Project" class="project-image-link">
+            <a href="https://pradstudio.com/projects/ecommerce-platform" target="_blank" rel="noopener noreferrer"
+              aria-label="View E-Commerce Platform Project" class="project-image-link">
               <div class="project-image-wrapper">
                 <img
-                  src="https://cdn.dribbble.com/userupload/14630437/file/original-e96945c1fd3d3f7eb8b487eed9ffbbd6.png?resize=1024x768&vertical=center"
-                  alt="Halcyon Theme - Dark Blue Theme for Editors" class="project-image group-hover:opacity-100">
+                  src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                  alt="Luxury E-Commerce Platform" class="project-image group-hover:opacity-100">
                 <div class="project-image-overlay"></div>
               </div>
             </a>
@@ -142,30 +178,31 @@
           <!-- Project Content (Right) -->
           <div class="project-content-right">
             <div class="project-content-wrapper">
-              <p class="project-label">Featured Project</p>
-              <a href="#" class="project-name">Halcyon Theme</a>
+              <p class="project-label">E-Commerce Solution</p>
+              <a href="#" class="project-name">Luxury Fashion Platform</a>
 
               <div class="project-description-box">
                 <p class="project-description">
-                  A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more.
-                  Available on Visual Studio Marketplace, Package Control, Atom Package Manager, and npm.
+                  A high-end fashion e-commerce platform with AR virtual try-on, AI recommendation engine,
+                  and seamless checkout experience. Increased client's online sales by 240% in first quarter
+                  post-launch.
                 </p>
               </div>
 
               <div class="project-tech-list align-right justify-start lg:justify-end">
-                <span>VS Code</span>
-                <span>Sublime Text</span>
-                <span>Atom</span>
-                <span>iTerm2</span>
-                <span>Hyper</span>
+                <span>React</span>
+                <span>Node.js</span>
+                <span>MongoDB</span>
+                <span>AR Core</span>
+                <span>Payment Gateway</span>
               </div>
 
               <div class="project-links align-right justify-start lg:justify-end">
-                <a href="#" class="project-link">
+                <a href="#" class="project-link" aria-label="Live demo">
                   <i class="fa fa-external-link"></i>
                 </a>
-                <a href="#" class="project-link">
-                  <i class="fa fa-github"></i>
+                <a href="#" class="project-link" aria-label="Case study">
+                  <i class="fa fa-file-text"></i>
                 </a>
               </div>
             </div>
@@ -175,43 +212,95 @@
         <div class="project-container project-container-reverse group">
           <!-- Project Image (Right) -->
           <div class="project-image-right">
-            <a href="https://example.com/projects/halcyon" target="_blank" rel="noopener noreferrer"
-              aria-label="View Halcyon Theme Project" class="project-image-link">
+            <a href="https://pradstudio.com/projects/healthcare-app" target="_blank" rel="noopener noreferrer"
+              aria-label="View Healthcare App Project" class="project-image-link">
               <div class="project-image-wrapper">
                 <img
-                  src="https://cdn.dribbble.com/userupload/11926854/file/original-0606ea2e576dcf08407fdfc8fd3fefbb.png?resize=1024x768&vertical=center"
-                  alt="Halcyon Theme - Dark Blue Theme for Editors" class="project-image group-hover:opacity-100">
+                  src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                  alt="Telemedicine Mobile App" class="project-image group-hover:opacity-100">
                 <div class="project-image-overlay"></div>
               </div>
             </a>
           </div>
+
           <!-- Project Content (Left) -->
           <div class="project-content-left">
             <div class="project-content-wrapper">
-              <p class="project-label">Featured Project</p>
-              <a href="#" class="project-name">Halcyon Theme</a>
+              <p class="project-label">Healthcare Application</p>
+              <a href="#" class="project-name">Telemedicine Platform</a>
 
               <div class="project-description-box">
                 <p class="project-description">
-                  A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more.
-                  Available on Visual Studio Marketplace, Package Control, Atom Package Manager, and npm.
+                  A HIPAA-compliant telemedicine solution with video consultation,
+                  e-prescription, and health monitoring features. Currently serving
+                  50+ clinics with 98% patient satisfaction rate.
                 </p>
               </div>
 
               <div class="project-tech-list align-left">
-                <span>VS Code</span>
-                <span>Sublime Text</span>
-                <span>Atom</span>
-                <span>iTerm2</span>
-                <span>Hyper</span>
+                <span>Flutter</span>
+                <span>Firebase</span>
+                <span>WebRTC</span>
+                <span>HIPAA Compliance</span>
+                <span>Google Cloud</span>
               </div>
 
               <div class="project-links align-left">
-                <a href="#" class="project-link" aria-label="External link">
-                  <i class="fa fa-external-link"></i>
+                <a href="#" class="project-link" aria-label="App Store">
+                  <i class="fa fa-apple"></i>
                 </a>
-                <a href="#" class="project-link" aria-label="GitHub repository">
-                  <i class="fa fa-github"></i>
+                <a href="#" class="project-link" aria-label="Play Store">
+                  <i class="fa fa-android"></i>
+                </a>
+                <a href="#" class="project-link" aria-label="Case study">
+                  <i class="fa fa-file-text"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 - Enterprise Solution -->
+        <div class="project-container group mt-24">
+          <div class="project-image-left">
+            <a href="https://pradstudio.com/projects/enterprise-system" target="_blank" rel="noopener noreferrer"
+              aria-label="View Enterprise System Project" class="project-image-link">
+              <div class="project-image-wrapper">
+                <img
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                  alt="Enterprise Management System" class="project-image group-hover:opacity-100">
+                <div class="project-image-overlay"></div>
+              </div>
+            </a>
+          </div>
+
+          <div class="project-content-right">
+            <div class="project-content-wrapper">
+              <p class="project-label">Enterprise Solution</p>
+              <a href="#" class="project-name">Inventory Management System</a>
+
+              <div class="project-description-box">
+                <p class="project-description">
+                  Custom ERP solution integrating inventory, supply chain, and business
+                  intelligence for a manufacturing client. Reduced operational costs by
+                  35% and improved inventory accuracy to 99.8%.
+                </p>
+              </div>
+
+              <div class="project-tech-list align-right justify-start lg:justify-end">
+                <span>Angular</span>
+                <span>.NET Core</span>
+                <span>SQL Server</span>
+                <span>Power BI</span>
+                <span>Azure</span>
+              </div>
+
+              <div class="project-links align-right justify-start lg:justify-end">
+                <a href="#" class="project-link" aria-label="Client testimonial">
+                  <i class="fa fa-video-camera"></i>
+                </a>
+                <a href="#" class="project-link" aria-label="Case study">
+                  <i class="fa fa-file-text"></i>
                 </a>
               </div>
             </div>
@@ -219,174 +308,183 @@
         </div>
       </section>
 
+      <!-- PORTFOLIO INSIGHTS SECTION -->
       <section id="insight" class="insight-section">
         <div class="insight-header">
-          <h2 class="insight-title">Other Noteworthy Projects</h2>
-          <a href="#" class="insight-archive-link">view the archive</a>
+          <h2 class="insight-title">Our Diverse Portfolio</h2>
+          <a href="/portfolio" class="insight-archive-link">Explore Full Portfolio</a>
         </div>
 
+        <!-- Project grid -->
         <div class="project-grid">
-          <!-- Project 1 -->
+          <!-- Project 1 - Corporate Website -->
           <div class="project-card">
             <div class="project-card-header">
               <a href="#" class="project-card-icon">
-                <i class="fa fa-folder"></i>
+                <i class="fa fa-briefcase"></i>
               </a>
               <a href="#" class="project-card-external">
                 <i class="fa fa-external-link"></i>
               </a>
             </div>
-            <h3 class="project-card-title">Integrating Algolia Search with WordPress Multisite</h3>
+            <h3 class="project-card-title">Corporate Website Redesign</h3>
             <p class="project-card-description">
-              Building a custom multisite compatible WordPress plugin to build global search with Algolia
+              Complete redesign and CMS implementation for a multinational company, resulting in 40% increase in lead
+              generation.
             </p>
             <div class="project-card-tech">
-              <span>Algolia</span>
               <span>WordPress</span>
-              <span>PHP</span>
+              <span>Headless CMS</span>
+              <span>SEO Optimization</span>
             </div>
           </div>
 
-          <!-- Project 2 -->
+          <!-- Project 2 - Mobile Banking -->
           <div class="project-card">
             <div class="project-card-header">
               <a href="#" class="project-card-icon">
-                <i class="fa fa-folder"></i>
+                <i class="fa fa-mobile"></i>
               </a>
               <a href="#" class="project-card-external">
                 <i class="fa fa-external-link"></i>
               </a>
             </div>
-            <h3 class="project-card-title">Time to Have More Fun</h3>
+            <h3 class="project-card-title">Digital Banking Application</h3>
             <p class="project-card-description">
-              A single page web app for helping me choose where to travel, built with Next.js, Firebase, and Tailwind CSS
+              Secure mobile banking app with biometric authentication and real-time transaction features for a regional
+              bank.
             </p>
             <div class="project-card-tech">
-              <span>Next.js</span>
-              <span>Tailwind CSS</span>
-              <span>Firebase</span>
+              <span>Flutter</span>
+              <span>Blockchain</span>
+              <span>Security</span>
             </div>
           </div>
 
-          <!-- Project 3 -->
+          <!-- Project 3 - LMS Platform -->
           <div class="project-card">
             <div class="project-card-header">
               <a href="#" class="project-card-icon">
-                <i class="fa fa-folder"></i>
+                <i class="fa fa-graduation-cap"></i>
               </a>
               <a href="#" class="project-card-external">
                 <i class="fa fa-external-link"></i>
               </a>
             </div>
-            <h3 class="project-card-title">Building a Headless Mobile App CMS From Scratch</h3>
+            <h3 class="project-card-title">E-Learning Platform</h3>
             <p class="project-card-description">
-              Find out how we built a custom headless CMS with Node, Express, and Firebase for a project at Upstatement
+              Custom learning management system supporting 10,000+ concurrent users with interactive course builder.
             </p>
             <div class="project-card-tech">
-              <span>Node</span>
-              <span>Express</span>
-              <span>Firebase</span>
-              <span>Vue</span>
+              <span>Laravel</span>
+              <span>Vue.js</span>
+              <span>WebRTC</span>
             </div>
           </div>
 
-          <!-- Project 4 -->
+          <!-- Project 4 - IoT Dashboard -->
           <div class="project-card">
             <div class="project-card-header">
               <a href="#" class="project-card-icon">
-                <i class="fa fa-folder"></i>
+                <i class="fa fa-fire"></i>
               </a>
               <a href="#" class="project-card-external">
                 <i class="fa fa-external-link"></i>
               </a>
             </div>
-            <h3 class="project-card-title">OctoProfile</h3>
+            <h3 class="project-card-title">Smart Factory Dashboard</h3>
             <p class="project-card-description">
-              A nicer look at your GitHub profile and repo stats. Includes data visualizations of your top languages,
-              starred repositories, and sort through your top repos by number of stars, forks, and size.
+              Real-time IoT monitoring system for manufacturing equipment with predictive maintenance alerts.
             </p>
             <div class="project-card-tech">
-              <span>Next.js</span>
-              <span>Chart.js</span>
-              <span>GitHub API</span>
+              <span>React</span>
+              <span>Node.js</span>
+              <span>MQTT</span>
             </div>
           </div>
 
-          <!-- Project 5 -->
+          <!-- Project 5 - Government Portal -->
           <div class="project-card">
             <div class="project-card-header">
               <a href="#" class="project-card-icon">
-                <i class="fa fa-folder"></i>
+                <i class="fa fa-building"></i>
               </a>
               <a href="#" class="project-card-external">
                 <i class="fa fa-external-link"></i>
               </a>
             </div>
-            <h3 class="project-card-title">Google Keep Clone</h3>
+            <h3 class="project-card-title">Government Service Portal</h3>
             <p class="project-card-description">
-              A simple Google Keep clone built with Vue and Firebase.
+              Accessible digital platform for public services with multi-language support and document processing.
             </p>
             <div class="project-card-tech">
-              <span>Vue</span>
-              <span>Firebase</span>
+              <span>.NET Core</span>
+              <span>Accessibility</span>
+              <span>OCR</span>
             </div>
           </div>
 
-          <!-- Project 6 -->
+          <!-- Project 6 - Marketplace -->
           <div class="project-card">
             <div class="project-card-header">
               <a href="#" class="project-card-icon">
-                <i class="fa fa-folder"></i>
+                <i class="fa fa-shopping-cart"></i>
               </a>
               <a href="#" class="project-card-external">
                 <i class="fa fa-external-link"></i>
               </a>
             </div>
-            <h3 class="project-card-title">Apple Music Embeddable Web Player Widget</h3>
+            <h3 class="project-card-title">B2B Marketplace Platform</h3>
             <p class="project-card-description">
-              Embeddable web player widget for Apple Music that lets users log in and listen to full song playback in
-              the browser leveraging MusicKit.js.
+              Wholesale e-commerce platform connecting manufacturers with retailers across Southeast Asia.
             </p>
             <div class="project-card-tech">
-              <span>MusicKit.js</span>
-              <span>JavaScript</span>
-              <span>SCSS</span>
+              <span>MERN Stack</span>
+              <span>Payment Gateway</span>
+              <span>Logistics API</span>
             </div>
           </div>
         </div>
 
+        <!-- View more button -->
         <div class="show-more-container">
-          <a href="#" class="btn btn-outline btn-glow">
-            Show More
+          <a href="/portfolio" class="btn btn-outline btn-glow">
+            View More Case Studies
           </a>
         </div>
       </section>
 
+      <!-- CONTACT SECTION -->
       <section id="contact" class="contact-section">
-        <p class="contact-subtitle">94. What's Next?</p>
-        <h2 class="contact-title">Get In Touch</h2>
+        <p class="contact-subtitle">Ready to Start Your Project?</p>
+        <h2 class="contact-title">Let's Build Something Amazing</h2>
 
         <div class="contact-description">
-          <p>Although I'm not currently looking for any new opportunities, my inbox is</p>
-          <p>always open. Whether you have a question or just want to say hi, I'll try my</p>
-          <p>best to get back to you!</p>
+          <p>We're excited to hear about your ideas and help bring them to life.</p>
+          <p>Whether you need a custom solution, have questions about our services,</p>
+          <p>or just want to explore possibilities, our team is ready to assist you.</p>
         </div>
 
         <div class="contact-btn-container">
-          <a href="mailto:hello@example.com"
-            class="btn btn-outline btn-glow">
-            Say Hello
-          </a>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="mailto:surat.buat.adi@gmail.com" class="btn btn-primary btn-glow">
+              Get Free Consultation
+            </a>
+          </div>
         </div>
 
+        <!-- Footer -->
         <footer class="footer">
-          <p class="footer-text">Designed by Brittany Chiang</p>
-          <p class="footer-text">0-7.084J/4.189</p>
+          <p class="footer-text">© 2025 PRADStudio. All rights reserved.</p>
+          <p class="footer-text">Bali, Indonesia | Digital Solutions Tailored for Your Success</p>
         </footer>
       </section>
+
     </main>
   </div>
 
+
+  <!-- Main JavaScript file -->
   <script type="module" src="/src/main.js"></script>
 
 </body>
