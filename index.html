@@ -16,9 +16,12 @@
 
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Alpine JS -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
-<body>
+<body x-data="app">
   <!-- Spotlight effect element (positioned fixed) -->
   <div id="spotlight"></div>
 
@@ -26,33 +29,37 @@
   <div id="app">
 
     <!-- ==================== HEADER SECTION ==================== -->
-    <header class="header">
+    <header class="header" x-init="setupHeader()" :class="{ 
+          'header-show': !scrollingDown, 
+          'header-hide': scrollingDown && scrollY > 80 
+        }">
       <div class="header-container">
         <!-- Company logo -->
-        <!-- <p class="logo">PRADStudio</p> -->
         <div class="logo-container">
-          <a href="/#intro" aria-label="PRADStudio Home">
-            <!-- <img src="./public/PRADStudio-logo.svg" alt="PRADStudio Logo" class="logo-image" width="180"
-              height="40" loading="eager"> -->
-              <p class="logo">PRADStudio</p>
+          <a href="#intro" aria-label="PRADStudio Home" @click="closeMobileMenu">
+            <p class="logo">PRADStudio</p>
           </a>
         </div>
 
         <!-- Main navigation -->
-        <nav class="main-nav">
-          <ul class="nav-list">
-            <li class="nav-item"><a href="#intro">Intro</a></li>
-            <li class="nav-item"><a href="#about">About</a></li>
-            <li class="nav-item"><a href="#showcase">Showcase</a></li>
-            <li class="nav-item"><a href="#insight">Insight</a></li>
-            <li class="nav-item"><a href="#contact">Contact</a></li>
-          </ul>
+        <nav class="main-nav" :class="{ 'mobile-nav-open': mobileNavOpen }" x-cloak>
+          <!-- Scrollable content container -->
+          <div class="mobile-nav-content">
+            <ul class="nav-list">
+              <li class="nav-item"><a href="#intro" @click="closeMobileMenu">Intro</a></li>
+              <li class="nav-item"><a href="#about" @click="closeMobileMenu">About</a></li>
+              <li class="nav-item"><a href="#showcase" @click="closeMobileMenu">Showcase</a></li>
+              <li class="nav-item"><a href="#insight" @click="closeMobileMenu">Insight</a></li>
+              <li class="nav-item"><a href="#contact" @click="closeMobileMenu">Contact</a></li>
+            </ul>
+          </div>
         </nav>
 
         <!-- Login button and mobile menu toggle -->
-        <a href="#" class="btn btn-outline btn-glow btn-login">Login</a>
-        <button class="mobile-menu-btn">
-          <i class="fa fa-bars fa-lg"></i>
+        <a href="#" class="btn btn-outline btn-glow hidden md:block">Login</a>
+        <button class="mobile-menu-btn" @click="toggleMenu" aria-label="Toggle menu">
+          <i class="fa fa-bars fa-lg" x-show="!mobileNavOpen"></i>
+          <i class="fa fa-times fa-lg" x-show="mobileNavOpen" x-cloak></i>
         </button>
       </div>
     </header>
@@ -102,7 +109,7 @@
           <!-- Left column - Text content -->
           <div class="about-content">
             <h2 class="section-title">
-              <span class="section-number">01.</span>
+              <span class="section-number">02.</span>
               <span class="section-heading">About Our Agency</span>
               <span class="section-divider"></span>
             </h2>
@@ -155,7 +162,7 @@
         <div class="showcase-header">
           <div class="showcase-title-container">
             <h2 class="section-title">
-              <span class="section-number">02.</span>
+              <span class="section-number">03.</span>
               <span class="section-heading">Our Featured Projects</span>
               <span class="section-divider"></span>
             </h2>
@@ -312,7 +319,11 @@
       <!-- PORTFOLIO INSIGHTS SECTION -->
       <section id="insight" class="insight-section">
         <div class="insight-header">
-          <h2 class="insight-title">Our Diverse Portfolio</h2>
+          <!-- <h2 class="insight-title">Our Diverse Portfolio</h2> -->
+          <h2 class="insight-title">
+              <span class="insight-number">04.</span>
+              <span class="insight-heading">Our Diverse Portfolio</span>
+            </h2>
           <a href="/portfolio" class="insight-archive-link">Explore Full Portfolio</a>
         </div>
 
@@ -484,6 +495,46 @@
     </main>
   </div>
 
+  <script>
+    document.addEventListener('alpine:init', () => {
+      Alpine.data('app', () => ({
+        scrollingDown: false,
+        lastScrollY: 0,
+        scrollY: 0,
+        mobileNavOpen: false,
+
+        setupHeader() {
+          window.addEventListener('scroll', () => {
+            if (!this.mobileNavOpen) {
+              this.scrollY = window.scrollY;
+              this.scrollingDown = this.scrollY > this.lastScrollY && this.scrollY > 80;
+              this.lastScrollY = this.scrollY;
+            }
+          });
+        },
+        toggleMenu() {
+          this.mobileNavOpen = !this.mobileNavOpen;
+          // Disable scroll tracking when menu is open
+          if (this.mobileNavOpen) {
+            this.scrollingDown = false;
+          }
+        },
+        closeMobileMenu() {
+          this.mobileNavOpen = false; // Ini yang diperbaiki - meng-set ke false
+        },
+
+        init() {
+          // Spotlight effect
+          const spotlight = document.getElementById('spotlight');
+          document.addEventListener('mousemove', (e) => {
+            spotlight.style.left = `${e.clientX}px`;
+            spotlight.style.top = `${e.clientY}px`;
+          });
+        },
+
+      }));
+    });
+  </script>
 
   <!-- Main JavaScript file -->
   <script type="module" src="src/main.js"></script>

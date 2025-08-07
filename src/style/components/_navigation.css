@@ -8,14 +8,111 @@
   }
 
   .nav-item {
-    @apply text-text-light hover:text-accent duration-500;
+    @apply text-text-light relative transition-all duration-300 ease-in-out;
   }
 
-  .btn-login {
-    @apply hidden md:block;
+  .nav-item:hover {
+    @apply text-accent;
+    transform: translateY(-2px);
   }
 
+  .nav-item.active {
+    @apply font-medium text-accent;
+  }
+
+  @media (min-width: 769px) {
+    .nav-item::after {
+      content: "";
+      @apply absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 ease-in-out;
+    }
+
+    .nav-item:hover::after {
+      @apply w-full;
+    }
+  }
+
+  /* MOBILE MENU BUTTON */
   .mobile-menu-btn {
-    @apply md:hidden text-text-light hover:text-accent;
+    @apply md:hidden p-2 text-text-light hover:text-accent relative z-[102] transition-all duration-300 ease-in-out;
+  }
+
+  .mobile-menu-btn i {
+    @apply text-xl transition-transform duration-300;
+  }
+
+  .mobile-menu-btn:hover i {
+    transform: scale(1.1);
+    color: var(--color-accent);
+  }
+
+  .mobile-close-btn {
+    @apply absolute top-4 right-4 z-[103] text-text-light hover:text-accent p-2;
+  }
+
+  .mobile-nav-content {
+    @apply relative z-[101];
+  }
+
+  .main-nav::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  .main-nav.mobile-nav-open::before {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  @media (max-width: 768px) {
+    .main-nav {
+      @apply md:hidden fixed top-0 right-0 w-4/5 max-w-[300px] h-screen bg-bg-card z-[100] shadow-lg flex flex-col p-0 overflow-hidden transition-all duration-300 ease-in-out;
+      right: -100%;
+      transform: translateZ(0);
+      will-change: transform;
+    }
+
+    .main-nav.mobile-nav-open {
+      right: 0;
+    }
+
+    .nav-list {
+      @apply flex flex-col p-6 space-y-4 flex-1 mt-16;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .nav-item {
+      @apply text-lg w-full px-4 py-3 rounded-lg text-text-light transition-all duration-300 ease-in-out;
+    }
+
+    .nav-item:hover {
+      background-color: var(--color-navy-lighter);
+      @apply text-accent;
+      transform: translateY(-2px);
+    }
+
+    .nav-item.active {
+      @apply font-medium text-accent;
+      background-color: var(--color-navy-lighter);
+    }
+  }
+
+  @media (min-width: 768px) {
+    .header {
+      transition: transform 0.3s ease;
+    }
+
+    .header-show {
+      transform: translateY(0);
+    }
+
+    .header-hide {
+      transform: translateY(-100%);
+    }
   }
 }
