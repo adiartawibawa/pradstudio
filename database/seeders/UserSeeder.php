@@ -26,12 +26,12 @@ class UserSeeder extends Seeder
 
         $admins = [
             [
-                'name' => 'Super Administrator',
-                'email' => 'admin@app.test',
+                'name' => 'Adi Arta Wibawa',
+                'email' => 'surat.buat.adi@gmail.com',
                 'password' => Hash::make('password'),
-                'phone' => '081111111111',
-                'address' => 'Jl. Utama No. 1, Jakarta',
-                'date_of_birth' => '1980-01-01',
+                'phone' => '081916175060',
+                'address' => 'Tabanan, Bali',
+                'date_of_birth' => '1991-12-09',
                 'gender' => 'L',
                 'is_active' => true,
             ],
